@@ -8,12 +8,12 @@ import { usePathname, useSearchParams } from "next/navigation"
 function SuspendedPostHogPageView() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
-  const { posthog: ph, loaded } = usePostHog()
+  const ph = usePostHog()
 
   useEffect(() => {
-    if (!loaded) return
+    if (!ph) return
     ph.capture('$pageview', { path: pathname + searchParams.toString() })
-  }, [loaded, ph, pathname, searchParams])
+  }, [ph, pathname, searchParams])
 
   return null
 }
