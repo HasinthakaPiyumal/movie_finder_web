@@ -65,7 +65,7 @@ export default function HomePage({ trending }: { trending: MovieDetails[] }) {
                 <Button
                   type="submit"
                   size="lg"
-                  className="h-14 px-8 bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 border-0"
+                  className="h-14 px-8 bg-gradient-to-r cursor-pointer from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 border-0"
                 >
                   Find Recommendations
                 </Button>

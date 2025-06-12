@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { PostHogProvider } from "@/components/PostHogProvider"
 import { WatchedMoviesProvider } from "@/components/watched-movies-provider"
 import { AppBar } from "@/components/app-bar"
 import { BackgroundEffects } from "@/components/background-effects"
@@ -22,13 +23,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <WatchedMoviesProvider>
-          <div className="min-h-screen bg-background relative overflow-hidden">
-            <BackgroundEffects />
-            <AppBar />
-            <main className="container mx-auto px-4 py-8 relative z-10">{children}</main>
-          </div>
-        </WatchedMoviesProvider>
+        <PostHogProvider>
+          <WatchedMoviesProvider>
+            <div className="min-h-screen bg-background relative overflow-hidden">
+              <BackgroundEffects />
+              <AppBar />
+              <main className="container mx-auto px-4 py-8 relative z-10">
+                {children}
+              </main>
+            </div>
+          </WatchedMoviesProvider>
+        </PostHogProvider>
       </body>
     </html>
   )
