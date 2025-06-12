@@ -8,7 +8,7 @@ import { MovieDetails } from "../types/Movie";
 async function getRecommendations(query: string) {
   // Simulate or call your real API (must be async)
   try {
-    const res = await fetch(`http://localhost:8000/get-movies?favorite=${query}&n_recommendations=40`, {
+    const res = await fetch(`${process.env.BASE_URL}/get-movies?favorite=${query}&n_recommendations=40`, {
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
