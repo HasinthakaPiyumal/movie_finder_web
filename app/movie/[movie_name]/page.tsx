@@ -21,13 +21,13 @@ async function getMovie(movieName: string) {
 }
 
 type Props = {
-    searchParams: Promise<{
+    params: Promise<{
         movie_name?: string;
     }>;
 }
 
-export default async function RecommendationsPage({ searchParams }: Props) {
-    const movieName = (await searchParams).movie_name ?? "";
+export default async function RecommendationsPage({ params }: Props) {
+    const movieName = (await params).movie_name ?? "";
 
     let movie: MovieDetails | null = null;
     if (movieName) {
