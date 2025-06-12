@@ -37,11 +37,11 @@ async function getRecommendations(query: string) {
 }
 
 interface Props {
-  searchParams: { query?: string };
+  searchParams: Promise<{ query?: string }>;
 }
 
 export default async function RecommendationsPage({ searchParams }: Props) {
-  const query = searchParams.query ?? "";
+  const query = (await searchParams).query ?? "";
 
   let recommendations: MovieDetails[] = [];
   if (query) {

@@ -65,8 +65,8 @@ export default function WatchedMoviesPage() {
               <CardContent className="p-0 relative">
                 <div className="relative overflow-hidden">
                   <img
-                    src={movie.poster || "/placeholder.svg"}
-                    alt={movie.title}
+                    src={movie.Poster || "/placeholder.svg"}
+                    alt={movie.Title}
                     className="w-full h-64 object-cover cursor-pointer transition-transform duration-500 group-hover:scale-110"
                     onClick={() => handleMovieClick(movie.id)}
                   />
@@ -90,13 +90,13 @@ export default function WatchedMoviesPage() {
                 <div className="p-4 space-y-3">
                   <div className="cursor-pointer" onClick={() => handleMovieClick(movie.id)}>
                     <h3 className="font-semibold line-clamp-1 text-white hover:text-red-400 transition-colors">
-                      {movie.title}
+                      {movie.Title}
                     </h3>
                     <div className="flex items-center justify-between mt-2">
                       <Badge className="bg-gradient-to-r from-red-500/20 to-pink-500/20 text-red-300 border-red-500/30">
-                        {movie.genre}
+                        {movie.Genre}
                       </Badge>
-                      <span className="text-sm text-gray-400">{movie.year}</span>
+                      <span className="text-sm text-gray-400">{movie.Year}</span>
                     </div>
                   </div>
                   <Button
