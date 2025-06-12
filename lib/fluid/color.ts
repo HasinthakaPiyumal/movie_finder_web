@@ -1,9 +1,9 @@
-import type { HSVColor, RGBColor } from './types';
+import type { HSVColor, RGBColor } from "./types";
 
 class Color {
   public static generateColor(
     colorPalette: string[],
-    brightness: number,
+    brightness: number
   ): RGBColor {
     let hue: number;
     let saturation: number;
@@ -26,7 +26,7 @@ class Color {
   }
 
   public static HEXtoHSV(hex: string): HSVColor {
-    hex = hex.replace('#', '');
+    hex = hex.replace("#", "");
 
     const r = parseInt(hex.substring(0, 2), 16) / 255;
     const g = parseInt(hex.substring(2, 4), 16) / 255;
@@ -60,7 +60,7 @@ class Color {
   }
 
   public static HEXtoRGB(hex: string): RGBColor {
-    hex = hex.replace('#', '');
+    hex = hex.replace("#", "");
 
     const r = parseInt(hex.substring(0, 2), 16);
     const g = parseInt(hex.substring(2, 4), 16);
@@ -81,22 +81,34 @@ class Color {
 
     switch (i % 6) {
       case 0:
-        (r = v), (g = t), (b = p);
+        r = v;
+        g = t;
+        b = p;
         break;
       case 1:
-        (r = q), (g = v), (b = p);
+        r = q;
+        g = v;
+        b = p;
         break;
       case 2:
-        (r = p), (g = v), (b = t);
+        r = p;
+        g = v;
+        b = t;
         break;
       case 3:
-        (r = p), (g = q), (b = v);
+        r = p;
+        g = q;
+        b = v;
         break;
       case 4:
-        (r = t), (g = p), (b = v);
+        r = t;
+        g = p;
+        b = v;
         break;
       case 5:
-        (r = v), (g = p), (b = q);
+        r = v;
+        g = p;
+        b = q;
         break;
     }
 
